@@ -1,88 +1,40 @@
--- =====================================================
--- Topic: Data Definition Language (DDL)
--- Description: SQL commands used to define database structure
--- =====================================================
+# 📘 Data Definition Language (DDL)
 
+## 📌 Overview
+**Data Definition Language (DDL)** is a subset of SQL used to define, modify, and manage the structure of database objects such as tables, schemas, and indexes.
 
-/*
--------------------------------------------------------
-What is DDL?
--------------------------------------------------------
+---
 
-DDL (Data Definition Language) is used to define
-and manage the structure of database objects.
+## 🧠 What is DDL?
 
 DDL commands are used to:
 
-- Create tables
-- Modify tables
-- Delete tables
-- Remove table data
+- Create database objects  
+- Modify existing structures  
+- Delete database objects  
+- Remove all records from a table (without deleting structure)
 
-Common DDL Commands:
+---
 
-CREATE
-ALTER
-DROP
-TRUNCATE
+## 🔑 Common DDL Commands
 
-*/
+| Command    | Description |
+|-----------|------------|
+| CREATE    | Creates new database objects |
+| ALTER     | Modifies existing objects |
+| DROP      | Deletes objects permanently |
+| TRUNCATE  | Removes all records from a table |
 
+---
 
--- ==========================================
--- 1. CREATE TABLE
--- ==========================================
+# 🏗️ 1. CREATE TABLE
 
-/*
-CREATE TABLE is used to create a new table
-in a database.
-*/
+## 📖 Description
+`CREATE TABLE` is used to create a new table in the database.
 
-CREATE TABLE departments (
-    dept_id INT PRIMARY KEY,
-    dept_name VARCHAR(50),
-    location VARCHAR(50)
+## 🧾 Syntax
+```sql
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint
 );
-
-
--- ==========================================
--- 2. ALTER TABLE
--- ==========================================
-
-/*
-ALTER TABLE is used to modify an existing table.
-We can add columns, remove columns, or rename columns.
-*/
-
--- Add new column
-
-ALTER TABLE departments
-ADD manager_name VARCHAR(100);
-
-
--- ==========================================
--- 3. DROP TABLE
--- ==========================================
-
-/*
-DROP TABLE removes a table permanently
-from the database.
-*/
-
--- Example
-
--- DROP TABLE departments;
-
-
--- ==========================================
--- 4. TRUNCATE TABLE
--- ==========================================
-
-/*
-TRUNCATE removes all rows from a table
-but keeps the table structure.
-*/
-
--- Example
-
--- TRUNCATE TABLE departments;
